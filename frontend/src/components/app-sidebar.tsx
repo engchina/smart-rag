@@ -33,7 +33,7 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
+      name: "Smart RAG",
       logo: GalleryVerticalEnd,
       plan: "Enterprise",
     },
@@ -58,6 +58,10 @@ const data = {
         {
           title: "Chat",
           url: "/playground/chat",
+        },
+        {
+          title: "PDF Viewer",
+          url: "/playground/pdf-viewer",
         },
         {
           title: "History",

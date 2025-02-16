@@ -8,7 +8,6 @@ export default function LoginPage() {
 
     const handleLogin = (username: string, password: string) => {
         // 硬编码验证逻辑
-        console.log("handleLogin", username, password)
         if (username === 'admin' && password === '123456') {
             localStorage.setItem('isAuthenticated', 'true')
             navigate('/')

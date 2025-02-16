@@ -4,11 +4,12 @@ import {Button} from "@/components/ui/button"
 import {Card, CardContent, CardDescription, CardHeader, CardTitle,} from "@/components/ui/card"
 import {Input} from "@/components/ui/input"
 import {Label} from "@/components/ui/label"
-import React from "react";
+import {FormEvent} from "react";
 
-interface LoginFormProps extends Omit<React.ComponentProps<"div">, "onSubmit"> {
-    onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+interface LoginFormProps {
+    className?: string;
     error?: string;
+    onSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
 export function LoginForm({
@@ -21,7 +22,7 @@ export function LoginForm({
         <div className={cn("flex flex-col gap-6", className)} {...props}>
             <Card>
                 <CardHeader>
-                    <CardTitle>Login to your account</CardTitle>
+                    <CardTitle>Login to Smart RAG</CardTitle>
                     <CardDescription>
                         Enter your credentials to access the system
                     </CardDescription>
