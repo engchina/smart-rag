@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import {FileText, Upload} from 'lucide-react'
 
 import {BboxData} from "@/types/bbox.ts";
-import ErrorBoundary from "@/components/ErrorBoundary.tsx";
-import PDFJSONLViewer from "@/components/PDFJSONLViewer.tsx";
+import ErrorBoundary from "@/components/common/ErrorBoundary.tsx";
+import PDFJSONLViewer from "@/components/pdf/PDFJSONLViewer.tsx";
 import {SidebarInset, SidebarProvider, SidebarTrigger} from "@/components/ui/sidebar.tsx";
 import {AppSidebar} from "@/components/app-sidebar.tsx";
 import {Separator} from "@/components/ui/separator.tsx";
@@ -93,14 +93,14 @@ export const PDFViewerPage = () => {
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator className="hidden md:block"/>
                                 <BreadcrumbItem>
-                                    <BreadcrumbPage>Chat</BreadcrumbPage>
+                                    <BreadcrumbPage>PDF Viewer</BreadcrumbPage>
                                 </BreadcrumbItem>
                             </BreadcrumbList>
                         </Breadcrumb>
                     </div>
                 </header>
                 <div className="flex h-full flex-col">
-                    <div className="min-h-screen p-8">
+                    <div className="flex-1 overflow-y-auto px-1">
                         <div className="flex justify-center space-x-4 mb-8">
                             {/* 文件上传组件 */}
                             <label

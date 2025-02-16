@@ -23,14 +23,14 @@ interface PDFViewerProps {
     onPageHeightChange: (height: number) => void
 }
 
-const PDFViewer: React.FC<PDFViewerProps> = ({
-                                                 file,
-                                                 selectedBbox,
-                                                 pageNumber,
-                                                 onPageChange,
-                                                 numPages,
-                                                 onPageHeightChange
-                                             }) => {
+const PDFFileViewer: React.FC<PDFViewerProps> = ({
+                                                     file,
+                                                     selectedBbox,
+                                                     pageNumber,
+                                                     onPageChange,
+                                                     numPages,
+                                                     onPageHeightChange
+                                                 }) => {
     const [pageWidth, setPageWidth] = useState<number>(0)
     const [pageHeight, setPageHeight] = useState<number>(0)
     const [pdfDimensions, setPdfDimensions] = useState<{ width: number; height: number } | null>(null)
@@ -120,7 +120,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({
 
     return (
         <div
-            className="pdf-viewer w-full h-full min-h-0 flex flex-col"
+            className="w-full h-full min-h-0 flex flex-col"
             ref={containerRef}
         >
             <div className="flex-1 overflow-auto p-4">
@@ -148,4 +148,5 @@ const PDFViewer: React.FC<PDFViewerProps> = ({
     )
 }
 
-export default PDFViewer
+
+export default PDFFileViewer

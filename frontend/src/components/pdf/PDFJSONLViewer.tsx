@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {BboxData} from "@/types/bbox.ts";
-import PDFViewer from "@/components/PDFViewer.tsx";
-import JSONLViewer from "@/components/JSONLViewer.tsx";
+import PDFFileViewer from "@/components/pdf/PDFFileViewer.tsx";
+import JSONLDataViewer from "@/components/pdf/JSONLDataViewer.tsx";
 
 interface PDFJSONLViewerProps {
     pdfFile: File
@@ -86,8 +86,8 @@ const PDFJSONLViewer: React.FC<PDFJSONLViewerProps> = ({pdfFile, jsonlData, page
             </div>
             {/*<div className="flex-1 flex">*/}
             <div className="flex">
-                <div className="w-1/2 p-4">
-                    <PDFViewer
+                <div className="w-1/2 px-1">
+                    <PDFFileViewer
                         file={pdfFile}
                         selectedBbox={selectedBbox}
                         pageNumber={pageNumber}
@@ -96,8 +96,8 @@ const PDFJSONLViewer: React.FC<PDFJSONLViewerProps> = ({pdfFile, jsonlData, page
                         onPageHeightChange={handlePageHeightChange}
                     />
                 </div>
-                <div className="w-1/2 p-4">
-                    <JSONLViewer
+                <div className="w-1/2 px-1">
+                    <JSONLDataViewer
                         data={jsonlData}
                         onSelectBbox={handleSelectBbox}
                         selectedBbox={selectedBbox}
